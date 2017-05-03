@@ -1,0 +1,21 @@
+5月3日
+1.了解什么是线性系统
+2.多元一次联立方程式就是线性系统
+3.假设线性系统来处理问题,如信号与系统课程
+4.了解转置矩阵及运算方法
+5.矩阵和向量的乘法
+6.矩阵乘法注意从row column两个角度考虑
+7.identity matrix*任意matrix=它自己
+
+
+row 行 
+column列
+vector 向量
+product 乘积
+transpose 转置
+scalar 标量
+subtrack 相减
+matrix 矩阵
+identity matrix 对角特征矩阵4
+infinite 无限的
+determinants 行列式
