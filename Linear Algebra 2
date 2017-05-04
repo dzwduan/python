@@ -1,0 +1,27 @@
+5.4
+topic:How many solutions?
+1.理解dependent 和 independent
+2.三等价：
+  unique solution         columns of A is independent
+                          rank a=n
+                          NUllity A=0
+-----------------------------------------------
+  infinite solutions       columns of A is dependent
+                          Rank a<n
+                          NUllity A>0
+3.(linear) dependent 解释
+  <1> set A={a1,a2,...an} exist ai is linear combination of other vectors
+  <2> x1*a1+x2*a2+...+xn*an=0 且 x1,x2....xn不全为0
+4.(linear) independent 解释
+  只有找到x1=x2=x3=...=xn=0时才能使得x1*a1+x2*a2+...+xn*an=0
+5.homogeneous linear equations 齐次线性方程(都至少有为0的解）
+  if A*X=b have solution && columns of A are dependent --->infinite solution
+  if infinite solution  --->columns of A are dependent
+6.rank  nullity
+  rank : the maximum num of linear independent columns in the matrix
+  nullity=number of columns - rank
+  个人理解:
+  rank 代表重复度
+  dependent matrix 是依赖性矩阵，其中一个向量可用其他的来表示，即有倍数关系，可认为是重复的
+  只要有一个非零解，就有无数解
+  independent matrix 所有向量都是独立的，没有倍数关系，有解时只有唯一解
