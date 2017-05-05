@@ -25,3 +25,4 @@ topic:How many solutions?
   dependent matrix 是依赖性矩阵，其中一个向量可用其他的来表示，即有倍数关系，可认为是重复的
   只要有一个非零解，就有无数解
   independent matrix 所有向量都是独立的，没有倍数关系，有解时只有唯一解
+  dependent matrix也可以理解成存在平行向量的matrix
