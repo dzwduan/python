@@ -24,3 +24,12 @@ pixels(像素)--->edges（边界）--->object parts(combination of edges)--->obj
 具体流程：
 image input--->convolution--->max pooling(池化)--->convolution--->max pooling--->fully connected
            --->fully connected--->classifier(分类预测)
+Tips:
+何为池化：
+研究发现, 在每一次卷积的时候, 神经层可能会无意地丢失一些信息. 这时, 池化 (pooling) 就可以很好地解决这一问题.
+也就是说在卷集的时候, 我们不压缩长宽, 尽量地保留更多信息, 压缩的工作就交给池化了,这样的一项附加工作能够很有效的提高准确性. 
+有了这些技术,我们就可以搭建一个属于我们自己的卷积神经网络
+fullty connected--->fully connected意思是
+两层全连接的神经层 
+convolution意思是
+卷积层
