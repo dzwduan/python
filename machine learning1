@@ -1,0 +1,26 @@
+5.5
+Topic:what is machine learning
+分类：
+1.superised learning   监督学习（有数据，有标签）
+  un-superised learning 非监督学习（有数据，无标签）
+2.reinforcement learning 强化学习（在经验中提升）
+3.genetic algorithm      遗传算法 （类似进化法则，适者生存）
+
+Topic:what is neural network in machine learning
+结构：
+输入层：直接接受信息的神经层，负责传递收到的信息
+输出层：输出结果
+隐藏层：加工处理传入的信息
+
+我的理解：神经网络的机制类似于负反馈，但需要上千万次的训练才能得到正确结果
+每个神经元都有属于他的activation function (激励函数),逐步改进该函数的激励来得到结果
+
+Topic:what is convolutional neural networks(卷积神经网络)
+我的理解:卷积是对一块区域进行处理，神经网络由一连串的神经层组成，每一层神经层含有许多神经元，神经元是识别事物的关键、
+输入神经网络的实际上只是二进制的0和1，但卷积对区域处理加强了信息的连续性，使得神经网络能看到图形，加深理解。
+实现方式：卷积神经网络有一个批量过滤器，进行信息的收集，然后将边缘信息进行整理，过滤，给图片分类。
+pixels(像素)--->edges（边界）--->object parts(combination of edges)--->object models（具体模型）
+
+具体流程：
+image input--->convolution--->max pooling(池化)--->convolution--->max pooling--->fully connected
+           --->fully connected--->classifier(分类预测)
