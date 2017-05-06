@@ -6,6 +6,8 @@ Topic:what is machine learning
 2.reinforcement learning 强化学习（在经验中提升）
 3.genetic algorithm      遗传算法 （类似进化法则，适者生存）
 
+
+
 Topic:what is neural network in machine learning
 结构：
 输入层：直接接受信息的神经层，负责传递收到的信息
@@ -14,6 +16,8 @@ Topic:what is neural network in machine learning
 
 我的理解：神经网络的机制类似于负反馈，但需要上千万次的训练才能得到正确结果
 每个神经元都有属于他的activation function (激励函数),逐步改进该函数的激励来得到结果
+
+
 
 Topic:what is convolutional neural networks(卷积神经网络)
 我的理解:卷积是对一块区域进行处理，神经网络由一连串的神经层组成，每一层神经层含有许多神经元，神经元是识别事物的关键、
@@ -33,3 +37,12 @@ fullty connected--->fully connected意思是
 两层全连接的神经层 
 convolution意思是
 卷积层
+
+
+
+Topic:Recurrent Neural Network(循环神经网络)RNN
+处理序列数据的神经网络
+让神经网络也具备这种记住之前发生的事的能力
+RNN就会把之前的记忆都累积起来, 一起分析.
+
+
