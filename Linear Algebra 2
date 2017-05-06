@@ -26,3 +26,5 @@ topic:How many solutions?
   只要有一个非零解，就有无数解
   independent matrix 所有向量都是独立的，没有倍数关系，有解时只有唯一解
   dependent matrix也可以理解成存在平行向量的matrix
+  rank:
+  矩阵中的最大的不相关的向量的个数，就叫秩，可以理解为有秩序的程度。
