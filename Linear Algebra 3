@@ -1,0 +1,36 @@
+5.6
+Topic: solving system of Linear Equations(方程式)
+方法：
+interchange(交换)--->scaling(比例)--->row addition
+构成 Augmented(扩大的) Matrix
+[A|b]   m*(n+1) matrix ,即将A和b合成一个矩阵
+
+row  echelon(形成梯队)
+特征：each nonzero row lies above every zero row
+     the leading entries are in echelon form
+     每一行的第一个非零项连接起来顺序从左上到右下
+reduced row echelon form
+特征：1.满足 row echelon
+     2.the columns containing the leading entries are |standard vectors(只有一位为1，其余位为0)|
+
+pivot(枢纽) positions : leading entries的位置
+pivot columns: 包含pivot positon的位置-
+
+
+根据解的个数分类:
+unique solution:除了最后一列，所有的vector都是 standard vector
+
+infinite solutions:划分为两类
+1.free variables
+2.basic variables
+example: x1=7+3*x2,x2=free(任意)----->x1 basic     ,      x2 free
+
+no solution(inconsistent)
+存在条件：
+when an augmented matrix contains a row in which the only nonzero entry lies in the last column
+example: 0*x1+0*x2+0*x3=1
+
+
+Gaussian elimination(高斯消去法)
+需要理解和掌握，写不出来
+
