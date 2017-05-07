@@ -1,0 +1,9 @@
+5.7 stacford week1
+1.cost functio
+  J代表预测与实际的偏移量，可看做是方差，j越小越准确，j=0时两条曲线完全重合
+  J(θ0,θ1)=12m∑i=1m(y^i−yi)2=12m∑i=1m(hθ(xi)−yi)2
+2.Gradient Descent(梯度下降)
+  θj:=θj−α*偏导J(θ0,θ1)/偏导θj
+  ：=为赋值号
+  注意θ0,θ1需要同时改变，详细请看week1的temp1,temk2变化的例子
+  https://www.coursera.org/learn/machine-learning/supplement/U90DX/gradient-descent-for-linear-regression
