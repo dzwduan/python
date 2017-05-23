@@ -1,3 +1,6 @@
+python文档网址，建议安装anaconda
+http://nbviewer.jupyter.org/github/lijin-THU/notes-python/blob/master/index.ipynb
+
 python赋值机制：
 如例1：
 x = [1, 2, 3]
