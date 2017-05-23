@@ -1,0 +1,72 @@
+python赋值机制：
+如例1：
+x = [1, 2, 3]
+y = x
+x[1] = 100
+print y
+[1, 100, 3]
+改变变量x的值，变量y的值也随着改变，这与Python内部的赋值机制有关。
+
+如例2：
+x = [500, 501, 502]
+y = x
+y[1] = 600
+y = [700, 800]
+output:
+x [500, 600, 502]
+y [700, 800]
+
+python循环机制：
+可以使用 xrange 来代替 range 函数，其效果与range函数相同，
+但是 xrange 并不会一次性的产生所有的数据
+样例：
+total = 0
+for i in xrange(100000):
+    total += i
+print total
+
+运行时间比较：
+%timeit for i in xrange(1000000): i = i
+10 loops, best of 3: 40.7 ms per loop
+In [7]:
+%timeit for i in range(1000000): i = i
+10 loops, best of 3: 96.6 ms per loop
+
+
+python列表推导式：
+values = [10, 21, 4, 7, 12]
+squares = [x**2 for x in values]
+print squares
+[100, 441, 16, 49, 144]
+
+升级版可以在后面加if判断条件
+square_set = {x**2 for x in values if x <= 10}
+print(square_set)
+square_dict = {x: x**2 for x in values if x <= 10}  #式中:符号是字典！！
+print(square_dict)
+set([16, 49, 100])
+{10: 100, 4: 16, 7: 49}
+
+shift + enter 换行
+
+
+包
+假设我们有这样的一个文件夹：
+
+foo/
+
+__init__.py
+bar.py (defines func)
+baz.py (defines zap)
+这意味着 foo 是一个包，我们可以这样导入其中的内容：
+
+from foo.bar import func
+from foo.baz import zap
+bar 和 baz 都是 foo 文件夹下的 .py 文件。
+
+导入包要求：
+
+文件夹 foo 在Python的搜索路径中
+__init__.py 表示 foo 是一个包，它可以是个空文件。
+
+
