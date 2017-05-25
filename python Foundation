@@ -73,3 +73,16 @@ bar 和 baz 都是 foo 文件夹下的 .py 文件。
 __init__.py 表示 foo 是一个包，它可以是个空文件。
 
 
+arange 类似于Python中的 range 函数，只不过返回的不是列表，而是数组：
+arange(start, stop=None, step=1, dtype=None)
+产生一个在区间 [start, stop) 之间，以 step 为间隔的数组，
+如果只输入一个参数，则默认从 0 开始，并以这个值为结束
+
+数组的类型默认由参数 start, stop, step 来确定
+
+***关于python类型是否可变的问题
+list:列表用【】生成，可变
+tuple:元组即常量数组，用（）生成，不可变
+string：字符串不可变
+***numpy类型
+array（【】）可变
