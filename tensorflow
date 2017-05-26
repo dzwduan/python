@@ -1,0 +1,60 @@
+5.26   tensorflow  入门
+
+例程1
+#session的使用
+import tensorflow as tf
+matrix1=tf.constant([[3,3]])
+matrix2=tf.constant([[2],
+                     [2]])
+product=tf.matmul(matrix1,matrix2)
+#method1
+sess=tf.Session()
+result=sess.run(product)
+print(result)
+sess.close()
+#method2
+with tf.Session() as sess:
+    result2=sess.run(product)
+    print(result)
+    
+ 例程2
+ #定义常量one
+one=tf.constant(1)
+#定义加法步骤
+new_value=tf.add(state,one)
+#给state重新赋值
+update=tf.assign(state,new_value)
+# 如果定义 Variable, 就一定要 initialize
+init=tf.global_variables_initializer()
+#使用 Session
+with tf.Session() as sess:
+    sess.run(init)
+    for _ in range(3):
+        sess.run(update)
+        print (sess.run(state))
+   
+   
+例程3（配合科学计算库）
+import tensorflow as tf
+import numpy as np
+#create data
+x_data=np.random.rand(100).astype(np.float32)
+y_data=x_data*0.1+0.3
+Weights=tf.Variable(tf.random_uniform([1],-1.0,1.0))
+biases=tf.Variable(tf.zeros([1]))
+y=Weights*x_data+biases
+
+loss=tf.reduce_mean(tf.square(y-y_data))
+optimizer=tf.train.GradientDescentOptimizer(0.5)
+train=optimizer.minimize(loss)
+
+init=tf.global_variables_initializer()
+
+sess=tf.Session()
+sess.run(init)
+
+for step in range(201):
+    sess.run(train)
+    if step%20==0:
+        print(step,sess.run(Weights),sess.run(biases))
+        
