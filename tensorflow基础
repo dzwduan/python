@@ -50,6 +50,24 @@ tips:即使a为7，但传过去的仍为15
 
 5.利用占位节点placeholder添加输入
 占位符与tensor对象一样，但在创建时无需指定具体数值，而是为运行时即将到来的某个tensor对象预留位置，因此实际上变成了输入节点
+调用placeholder时，dtype参数必须指定，shape参数可选，name也可选是否指定
+placeholder的值是无法计算的，如果将其传入session.run()将产生异常
+a=tf.placeholder(tf.int32,shape=[2],name="my_input")   #创键一个长度为2的。。。
+
+6.Variable对象
+Variable为可变张量，tensor对象和op对象都不可变，在tensor中所有在节点间传递的数据都为tensor对象
+对应的辅助Op:
+tf.zeros([2,2]),  2*2的矩阵
+tf.ones([5])      长度为5的全1向量
+tf.random_normal([3,3,3],mean=0.0,stddev=2.0), 3*3*3的张量，均值0，标准差2
+tf.random_uniform([3,3,3],minval=0,maxval=10), 3*3*3的张量，服从0~10的均匀分布
+tf.truncated_normal([2,2],mean=5,stddev=1.0)  该函数不会创建任何偏离均值超过2倍标准差的值 ，此时 》=3&&《=7
+传入方式：
+tf.Variable(tf.random_normal([3,3,3],mean=0.0,stddev=2.0))
+
+
+
+
 
 
 
