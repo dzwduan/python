@@ -64,6 +64,82 @@ tf.random_uniform([3,3,3],minval=0,maxval=10), 3*3*3的张量，服从0~10的均
 tf.truncated_normal([2,2],mean=5,stddev=1.0)  该函数不会创建任何偏离均值超过2倍标准差的值 ，此时 》=3&&《=7
 传入方式：
 tf.Variable(tf.random_normal([3,3,3],mean=0.0,stddev=2.0))
+初始化方式：
+        全部初始化：init=tf.global_variables_initializer() ......
+        部分初始化：var1=tf.Variable(0,name="initialize_1")
+                   var2=tf.variable(1,name="initialize_2")
+                   init=tf.initialize_variables([var1],name="init_var1")
+                   sess.run(init)
+variable对象的修改:
+Variable.assign()为Variable对象赋予新值,!!!注意不是tf.assign
+Variable.assign_add(x)     自增x
+Variable.assign_sub(x)     自减x
+实例：
+my_var=tf.Variable(1)   #创建一个参数为1的变量对象
+my_var2=my_var.assign(my_var*2)    #创建一个op,使其每次运行时都将该variable对象乘以2
+init=tf.global_variables_initializer() #初始化op
+with tf.Session() as sess:
+    sess.run(init)                 #初始化Variable对象   
+    sess.run(my_var2)              #将该对象乘以2并将其返还  2
+#注意，不同的sess对象会各自独立维护Variable对象的值
+ 实例：
+ init=0
+ sess1=tf.Session()
+ sess2=tf.Session()
+ sess1.run(init)
+ sess1.run(my_var.assign_add(5))   output:5
+ sess2.run(init)
+ sess2.run(my_var.assign_add(6))   output:6
+ 
+将Variable对象重置为初始值：
+所有重置：   tf.global_variables_initializer()
+部分重置：   tf.initialize_variables()
+
+7.graph构图
+实例：
+import tensorflow as tf
+with tf.name_scope("scope_A"):
+    a=tf.add(1,2,name="add_A")
+    b=tf.multiply(a,3,name="mul_A")
+with tf.name_scope("scope_B"):
+    c=tf.add(4,5,name="add_B")
+    d=tf.multiply(c,6,name="mul_B")
+e=tf.add(b,d,name="output")
+writer=tf.summary.FileWriter('/demo',graph=tf.get_default_graph())
+writer.close()
+
+实例2：
+import tensorflow as tf
+graph=tf.Graph()
+with graph.as_default():
+    in_1=tf.placeholder(tf.float32,shape=[],name='input_a')
+    in_2=tf.placeholder(tf.float32,shape=[],name='input_b')
+    const=tf.constant(3,dtype=tf.float32,name='constnum')
+    with tf.name_scope("transformation"):
+        with tf.name_scope("A"):
+            A_mul=tf.multiply(in_1,const)
+            A_out=tf.subtract(A_mul,in_1)
+        with tf.name_scope("B"):
+            B_mul=tf.multiply(in_2,const)
+            B_out=tf.subtract(B_mul,in_2)
+        with tf.name_scope("C"):
+            C_div=tf.div(A_out,B_out)
+            C_out=tf.add(C_div,const)
+        with tf.name_scope("D"):
+            D_div=tf.div(B_out,A_out)
+            D_out=tf.add(D_div,const)
+            out=tf.maximum(C_out,D_out)
+        writer=tf.summary.FileWriter('./demo2',graph=graph)
+        writer.close()
+
+ 
+ 
+ 
+ 
+
+
+                   
+
 
 
 
