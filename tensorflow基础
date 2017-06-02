@@ -1,0 +1,56 @@
+1.实现简单的数据流图，了解节点（operation）和张量
+import tensorflow as tf
+a=tf.constant(5,name="input_a")
+b=tf.constant(3,name="input_b")
+c=tf.multiply(a,b,name="mul_c")
+d=tf.add(a,b,name="add_d")
+e=tf.add(c,d,name="add_e")
+with tf.Session() as sess:
+    output=sess.run(e)
+    writer=tf.summary.FileWriter('./mygraph',sess.graph)
+    writer.close()
+    
+2. graph对象
+自定义graph对象：
+import tensorflow as tf
+g1=tf.Graph()
+g2=tf.GRaph()
+with g1.as_default():
+    #定义g1中的张量，OP
+with g2.as_default():
+    #定义g2中的张量,Op
+tips:tensorflow库被加载时会自动创建一个默认的graph对象
+获取默认数据流图的句柄：
+default_graph=tf.get_default_graph()
+    
+3.tf.session()负责数据流图的执行，默认接受三个可选参数：
+target:指定执行引擎
+graph:指定加载的graph对象
+config:指定配置session对象所需的选项
+一个简单的例子：
+import tensorflow as tf
+a=tf.add(2,5)
+b=tf.multiply(a,3)  #注意新版tensorflow不使用mul
+with tf.Session() as sess:
+    sess.run(b)
+Session.run()方法接受一个参数fetches及其他三个可选参数：feed_dict,options,run_metadata    
+执行初始化Variable对象所需的计算，但返回值为None:
+sess.run(tf.global_variables_initializer())
+
+4.feed_dict参数
+用于重写之前的数据流图中的a的值
+实例：
+import tensorflow as tf
+a=tf.add(2,5)
+b=tf.multiply(a,3)
+with tf.Session() as sess:
+    replace_dict={a:15}
+    sess.run(b,feed_dict=replace_dict)
+tips:即使a为7，但传过去的仍为15
+
+5.利用占位节点placeholder添加输入
+占位符与tensor对象一样，但在创建时无需指定具体数值，而是为运行时即将到来的某个tensor对象预留位置，因此实际上变成了输入节点
+
+
+
+
