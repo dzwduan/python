@@ -1,10 +1,10 @@
-plt.subplot(numrows, numcols, fignum)
+1.plt.subplot(numrows, numcols, fignum)
 
 
-没有axis参数表示全部相加，axis＝0表示按列相加，axis＝1表示按照行的方向相加
+2.没有axis参数表示全部相加，axis＝0表示按列相加，axis＝1表示按照行的方向相加
 
 
-tf.assign(
+3.tf.assign(
     ref,
     value,
     validate_shape=None,
@@ -14,35 +14,34 @@ tf.assign(
 返回ref
 
 
-anaconda快捷安装tensorflow
+4.anaconda快捷安装tensorflow
 https://anaconda.org/conda-forge/tensorflow 
 conda install -c conda-forge tensorflow=1.1.0
 
 
 
-http://www.cnblogs.com/pinard/p/6251584.html
+5.http://www.cnblogs.com/pinard/p/6251584.html
 奇异值分解(SVD)原理与在降维中的应用
 
-
-tensorboard --inspect --logdir=/path          检测是否存在文件
+6.tensorboard --inspect --logdir=/path          检测是否存在文件
 localhost:6006                              在chrome输入到tensorboard
 
-tf.scalar_summary----->tf.summary.scalar()  版本更新
+7.tf.scalar_summary----->tf.summary.scalar()  版本更新
 
-tf.equal(A, B)是对比这两个矩阵或者向量的相等的元素，如果是相等的那就返回True，反正返回False，返回的值的矩阵维度和A是
+8.tf.equal(A, B)是对比这两个矩阵或者向量的相等的元素，如果是相等的那就返回True，反正返回False，返回的值的矩阵维度和A是
 
-decode的作用是将其他编码的字符串转换成unicode编码，如str1.decode('gb2312')，表示将gb2312编码的字符串str1转换成unicode编码。 
+9.decode的作用是将其他编码的字符串转换成unicode编码，如str1.decode('gb2312')，表示将gb2312编码的字符串str1转换成unicode编码。 
 
-encode的作用是将unicode编码转换成其他编码的字符串，如str2.encode('gb2312')，表示将unicode编码的字符串str2转换成gb2312编码。 
+10.encode的作用是将unicode编码转换成其他编码的字符串，如str2.encode('gb2312')，表示将unicode编码的字符串str2转换成gb2312编码。 
 os.path.join（path，* paths）
 智能地加入一个或多个路径组件
 
-os.getcwd() 方法用于返回当前工作目录。
+11.os.getcwd() 方法用于返回当前工作目录。
 
 
-tf.where
+12.tf.where
 
-where(
+13.where(
     condition,
     x=None,
     y=None,
@@ -51,8 +50,7 @@ where(
 
 
 
-tf.cond
-
+14.tf.con
 cond(
     pred,
     fn1,
@@ -62,11 +60,11 @@ cond(
 
 
 
-http://python.jobbole.com/81921/
+15.http://python.jobbole.com/81921/
 python self的用法
 
 
-http://www.kuqin.com/abyteofpython_cn/ch11s05.html
+16.http://www.kuqin.com/abyteofpython_cn/ch11s05.html
 python _init_() 方法
 __init__方法在类的一个对象被建立时，马上运行。
 这个方法可以用来对你的对象做一些你希望的 初始化 。
@@ -75,7 +73,7 @@ __init__方法在类的一个对象被建立时，马上运行。
 
 
 
-http://www.it610.com/article/4772457.htm
+17.http://www.it610.com/article/4772457.htm
 numpy.asarray(a,dtype=None,order=None)
 功能描述：将输入数据（列表的列表，元组的元组，元组的列表等）转换为矩阵形式
 a:数组形式的输入数据，包括list,元组的list，元组，元组的元组，元组的list和ndarrays
@@ -83,12 +81,12 @@ dtype:
 数据类型由输入数据推导
 
 
-关于square loss
+18.关于square loss
 http://www.csuldw.com/2016/03/26/2016-03-26-loss-function/
 
 
 
-conv2d(
+19.conv2d(
     input,
     filter,
     strides,
@@ -98,7 +96,7 @@ conv2d(
     name=None
 )计算给定4-D input和filter张量的2-D卷积。
 
-tf.nn.max_pool
+20.tf.nn.max_pool
 max_pool(
     value,
     ksize,
@@ -108,16 +106,14 @@ max_pool(
     name=None
 )在输入上执行最大池数。
 
-tf.nn.relu
-
+21.tf.nn.rel
 relu(
     features,
     name=None
 )计算线性整流
 
 
-tf.nn.softmax_cross_entropy_with_logits
-
+22.tf.nn.softmax_cross_entropy_with_logit
 softmax_cross_entropy_with_logits(
     _sentinel=None,
     labels=None,
@@ -143,34 +139,32 @@ argmax(
 )
 
 
-permute(A,[2 1 3]);%例如A是4×5×6的三维数组，permute后A变成5×4×6
+23.permute(A,[2 1 3]);%例如A是4×5×6的三维数组，permute后A变成5×4×6
 
 
-# 'x' is [1, 4]
+24.# 'x' is [1, 4]
 # 'y' is [2, 5]
 # 'z' is [3, 6]
 pack([x, y, z]) => [[1, 4], [2, 5], [3, 6]]  # Pack along first dim.
 pack([x, y, z], axis=1) => [[1, 2, 3], [4, 5, 6]]
 
 
-http://www.jianshu.com/p/fb119d0ff6a6
+25.http://www.jianshu.com/p/fb119d0ff6a6
 Tensorflow的softmax_cross_entropy_with_logits函数
 
 
-该类实现一个简单的机制来协调一组线程的终止
+26.该类实现一个简单的机制来协调一组线程的终止
 tf.train.Coordinator()
-
 tf.train.Coordinator.should_stop: returns True if the threads should stop.
 tf.train.Coordinator.request_stop: requests that threads should stop.
 tf.train.Coordinator.join: waits until the specified threads have stopped.
 
-time.sleep(t) 进程推迟t秒
+27.time.sleep(t) 进程推迟t秒
 
 
 
 
-tf.where
-
+28.tf.wher
 where(
     condition,
     x=None,
@@ -180,8 +174,7 @@ where(
 
 
 
-tf.cond
-
+29.tf.con
 cond(
     pred,
     fn1,
@@ -191,11 +184,11 @@ cond(
 
 
 
-http://python.jobbole.com/81921/
+30.http://python.jobbole.com/81921/
 python self的用法
 
 
-http://www.kuqin.com/abyteofpython_cn/ch11s05.html
+31.http://www.kuqin.com/abyteofpython_cn/ch11s05.html
 python _init_() 方法
 __init__方法在类的一个对象被建立时，马上运行。
 这个方法可以用来对你的对象做一些你希望的 初始化 。
@@ -204,7 +197,7 @@ __init__方法在类的一个对象被建立时，马上运行。
 
 
 
-http://www.it610.com/article/4772457.htm
+32.http://www.it610.com/article/4772457.htm
 numpy.asarray(a,dtype=None,order=None)
 功能描述：将输入数据（列表的列表，元组的元组，元组的列表等）转换为矩阵形式
 a:数组形式的输入数据，包括list,元组的list，元组，元组的元组，元组的list和ndarrays
@@ -212,12 +205,12 @@ dtype:
 数据类型由输入数据推导
 
 
-关于square loss
+33.关于square loss
 http://www.csuldw.com/2016/03/26/2016-03-26-loss-function/
 
 
 
-reduce_mean(
+34.reduce_mean(
     input_tensor,
     axis=None,
     keep_dims=False,
@@ -233,9 +226,9 @@ tf.reduce_mean(x, 1) ==> [1.,  2.]
 
 
 
-linspace 是用来生成一个等差数列的lin是linear的缩写
+35.linspace 是用来生成一个等差数列的lin是linear的缩写
 
-x=linspace(a,b,n)
+36.x=linspace(a,b,n)
 
 就是将生成一个以a和b为断点 共划分为n个区间的向量，比如
 
@@ -246,6 +239,6 @@ ans =
     1.0000    3.2500    5.5000    7.7500   10.0000
 
 
-numpy函数：[1]shape用法
+37.numpy函数：[1]shape用法
 http://jingyan.baidu.com/article/a24b33cd5c90b319fe002b9e.html
 
