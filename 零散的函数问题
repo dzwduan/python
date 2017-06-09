@@ -39,6 +39,55 @@ os.path.join（path，* paths）
 
 os.getcwd() 方法用于返回当前工作目录。
 
+
+tf.where
+
+where(
+    condition,
+    x=None,
+    y=None,
+    name=None
+)Return the elements, either from x or y, depending on the condition.
+
+
+
+tf.cond
+
+cond(
+    pred,
+    fn1,
+    fn2,
+    name=None
+)Return either fn1() or fn2() based on the boolean predicate pred
+
+
+
+http://python.jobbole.com/81921/
+python self的用法
+
+
+http://www.kuqin.com/abyteofpython_cn/ch11s05.html
+python _init_() 方法
+__init__方法在类的一个对象被建立时，马上运行。
+这个方法可以用来对你的对象做一些你希望的 初始化 。
+注意，这个名称的开始和结尾都是双下划
+
+
+
+
+http://www.it610.com/article/4772457.htm
+numpy.asarray(a,dtype=None,order=None)
+功能描述：将输入数据（列表的列表，元组的元组，元组的列表等）转换为矩阵形式
+a:数组形式的输入数据，包括list,元组的list，元组，元组的元组，元组的list和ndarrays
+dtype:
+数据类型由输入数据推导
+
+
+关于square loss
+http://www.csuldw.com/2016/03/26/2016-03-26-loss-function/
+
+
+
 conv2d(
     input,
     filter,
@@ -116,3 +165,52 @@ tf.train.Coordinator.request_stop: requests that threads should stop.
 tf.train.Coordinator.join: waits until the specified threads have stopped.
 
 time.sleep(t) 进程推迟t秒
+
+
+
+
+tf.where
+
+where(
+    condition,
+    x=None,
+    y=None,
+    name=None
+)Return the elements, either from x or y, depending on the condition.
+
+
+
+tf.cond
+
+cond(
+    pred,
+    fn1,
+    fn2,
+    name=None
+)Return either fn1() or fn2() based on the boolean predicate pred
+
+
+
+http://python.jobbole.com/81921/
+python self的用法
+
+
+http://www.kuqin.com/abyteofpython_cn/ch11s05.html
+python _init_() 方法
+__init__方法在类的一个对象被建立时，马上运行。
+这个方法可以用来对你的对象做一些你希望的 初始化 。
+注意，这个名称的开始和结尾都是双下划
+
+
+
+
+http://www.it610.com/article/4772457.htm
+numpy.asarray(a,dtype=None,order=None)
+功能描述：将输入数据（列表的列表，元组的元组，元组的列表等）转换为矩阵形式
+a:数组形式的输入数据，包括list,元组的list，元组，元组的元组，元组的list和ndarrays
+dtype:
+数据类型由输入数据推导
+
+
+关于square loss
+http://www.csuldw.com/2016/03/26/2016-03-26-loss-function/
