@@ -214,3 +214,38 @@ dtype:
 
 关于square loss
 http://www.csuldw.com/2016/03/26/2016-03-26-loss-function/
+
+
+
+reduce_mean(
+    input_tensor,
+    axis=None,
+    keep_dims=False,
+    name=None,
+    reduction_indices=None
+)如果axis没有条目，则减少所有尺寸，并返回具有单个元素的张量。
+例如：
+# 'x' is [[1., 1.]
+#         [2., 2.]]
+tf.reduce_mean(x) ==> 1.5
+tf.reduce_mean(x, 0) ==> [1.5, 1.5]
+tf.reduce_mean(x, 1) ==> [1.,  2.]
+
+
+
+linspace 是用来生成一个等差数列的lin是linear的缩写
+
+x=linspace(a,b,n)
+
+就是将生成一个以a和b为断点 共划分为n个区间的向量，比如
+
+>> linspace(1,10,5)
+
+ans =
+
+    1.0000    3.2500    5.5000    7.7500   10.0000
+
+
+numpy函数：[1]shape用法
+http://jingyan.baidu.com/article/a24b33cd5c90b319fe002b9e.html
+
