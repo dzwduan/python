@@ -242,3 +242,28 @@ ans =
 37.numpy函数：[1]shape用法
 http://jingyan.baidu.com/article/a24b33cd5c90b319fe002b9e.html
 
+38.
+reduce_xxx这类操作，在官方文档中，都放在Reduction下：
+
+ReductionTensorFlow provides several operations that you can use to perform common math computations 
+that reduce various dimensions of a tensor.
+也就是说，这些操作的本质就是降维，以xxx的手段降维。
+
+在所有reduce_xxx系列操作中，都有reduction_indices这个参数，即沿某个方向，使用xxx方法，对input_tensor进行降维。
+
+reduction_indices的默认值时None，即把input_tensor降到 0维，也就是一个数。
+
+对于2维input_tensor，reduction_indices=0时，按列；reduction_indices=1时，按行。
+
+[lower:upper:step]
+
+min/max与np.argmin/np.argmax函数的功能不同
+
+前者返回值，后者返回最值所在的索引（下标）
+
+处理的对象不同 
+前者跟适合处理list等可迭代对象，而后者自然是numpy里的核心数据结构ndarray（多维数组）
+
+min/max是Python内置的函数
+
+np.argmin/np.argmax是numpy库中的成员函数
